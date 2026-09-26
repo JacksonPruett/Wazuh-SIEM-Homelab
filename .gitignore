@@ -1,0 +1,22 @@
+# Wazuh certificates and private keys
+*.pem
+*.key
+*.crt
+wazuh-certificates.tar
+
+# Credentials / secrets
+.env
+*.secret
+passwords.txt
+credentials.txt
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# SSH private keys
+id_rsa
+id_ed25519
+id_ecdsa

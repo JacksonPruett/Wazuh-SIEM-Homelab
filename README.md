@@ -21,37 +21,40 @@ The goal of this project is to build practical experience with:
 
 ## Architecture
 
-    ┌──────────────────────┐
-    │      Desktop PC      │
-    │    Analyst / Admin   │
-    │  Virtualization Host │
-    └──────────┬───────────┘
-               │
-               │ HTTPS
-               ▼
-    ┌──────────────────────┐
-    │   Wazuh Dashboard    │
-    │                      │
-    │   Raspberry Pi 5     │
-    │   192.168.12.137     │
-    └──────────┬───────────┘
-               │
-        ┌──────┴───────┐
-        │              │
-        ▼              ▼
-    ┌───────────────┐  ┌───────────────┐
-    │ Wazuh Manager │  │ Wazuh Indexer │
-    │    wazuh-1    │  │    node-1     │
-    └───────┬───────┘  └───────────────┘
-            ▲
-            │
-            │ Wazuh Agent
-            │
-    ┌───────┴────────┐
-    │  MacBook Air   │
-    │      M4        │
-    │ First Endpoint │
-    └────────────────┘
+                         ┌─────────────────────────┐
+                         │       Desktop PC        │
+                         │     Analyst / Admin     │
+                         │   Virtualization Host   │
+                         └────────────┬────────────┘
+                                      │
+                                      │ HTTPS
+                                      ▼
+                         ┌─────────────────────────┐
+                         │    Raspberry Pi 5       │
+                         │    192.168.12.137       │
+                         │                         │
+                         │    Wazuh Dashboard      │
+                         │    Wazuh Manager        │
+                         │    Wazuh Indexer        │
+                         └────────────┬────────────┘
+                                      │
+                  ┌───────────────────┼───────────────────┐
+                  │                   │                   │
+                  ▼                   ▼                   ▼
+          ┌──────────────┐    ┌──────────────┐    ┌──────────────┐
+          │ Windows 11   │    │ Windows      │    │ Linux Mint   │
+          │ Pro          │    │ Server 2025  │    │ VM           │
+          │ Agent 002    │    │ Agent 003    │    │ Agent 004    │
+          └──────────────┘    └──────────────┘    └──────────────┘
+
+                  ┌───────────────────┴───────────────────┐
+                  │                                       │
+                  ▼                                       ▼
+          ┌──────────────┐                        ┌──────────────┐
+          │ MacBook Air  │                        │ Kali Linux   │
+          │ M4           │                        │ VM           │
+          │ Agent 001    │                        │ Agent 005    │
+          └──────────────┘                        └──────────────┘
 
 The Raspberry Pi 5 hosts the central Wazuh infrastructure as a single-node deployment:
 

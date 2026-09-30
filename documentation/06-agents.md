@@ -12,9 +12,24 @@ Two endpoints have been successfully enrolled and are currently reporting an **A
 
 - MacBook Air M4 — Agent `001`
 - Windows Desktop — Agent `002`
-
+- Windows Server VM - Agent `003`
+- Linux Mint VM - Agent `004`
+- Kali Linux VM - Agent `005`
 ## Agent Architecture
-
+    ┌───────────────────┐
+    │   Kali Linux      │
+    │     Agent 005     │
+    └─────────┬─────────┘
+              │
+              │ Wazuh Agent
+              │
+    ┌───────────────────┐
+    │   Linux Mint VM   │
+    │     Agent 004     │
+    └─────────┬─────────┘
+              │
+              │ Wazuh Agent
+              │
     ┌───────────────────┐
     │   MacBook Air M4  │
     │     Agent 001     │
@@ -37,6 +52,13 @@ Two endpoints have been successfully enrolled and are currently reporting an **A
     │     Agent 002     │
     │     JacksonPC     │
     └───────────────────┘
+              │ Wazuh Agent
+              │
+    ┌─────────┴─────────┐
+    │ Windows Server VM │
+    │     Agent 003     │
+    │                   │
+    └───────────────────┘
 
 ## Current Agents
 
@@ -44,6 +66,54 @@ Two endpoints have been successfully enrolled and are currently reporting an **A
 |---|---|---|---|
 | 001 | Mac.lan | MacBook Air M4 | Active |
 | 002 | JacksonPC | Windows Desktop | Active |
+| 003 | Windows Server | VM | Active |
+| 004 | Linux Mint | VM | Active |
+| 005 | Kali Linux | VM | Active |
+
+All five endpoints are communicating with the Wazuh Manager at:
+
+    192.168.12.137
+
+This represents the completion of the initial five-endpoint enrollment goal.
+
+## Linux Agent Enrollment
+
+Linux Mint and Kali Linux were enrolled using the Wazuh APT repository.
+
+The general enrollment process was:
+
+1. Import the Wazuh signing key.
+2. Configure the Wazuh APT repository.
+3. Update the package index.
+4. Verify the available Wazuh agent package.
+5. Install the Wazuh agent with the Manager address.
+6. Enable and start the Wazuh agent service.
+7. Verify the agent service and Wazuh logs.
+8. Confirm the endpoint appears in the Wazuh Dashboard.
+
+Both Linux Mint and Kali Linux successfully enrolled and became visible in the Wazuh Dashboard.
+
+### Linux Mint
+
+Linux Mint was successfully installed and enrolled as a Wazuh endpoint.
+
+The agent communicates with:
+
+    192.168.12.137
+
+The agent service was enabled and started successfully.
+
+### Kali Linux
+
+Kali Linux was successfully installed and enrolled as a Wazuh endpoint.
+
+The agent communicates with:
+
+    192.168.12.137
+
+The agent service was enabled and started successfully.
+
+Kali is intended to serve as a security testing endpoint within the lab. Testing activities will be conducted in the isolated home-lab environment and monitored through Wazuh.
 
 ## MacBook Air M4
 

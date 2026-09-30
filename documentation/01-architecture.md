@@ -184,3 +184,49 @@ Planned additions include:
 - Documentation of detection and response workflows
 
 The goal is to progressively turn the environment into a realistic security operations laboratory.
+
+## Current Lab Status
+
+The Wazuh infrastructure is operational and the initial endpoint deployment phase has been completed.
+
+### Wazuh Infrastructure
+
+- Raspberry Pi 5
+- Raspberry Pi OS / Debian 13 (Trixie)
+- ARM64
+- 8 GB RAM
+- Wazuh Manager
+- Wazuh Indexer
+- Wazuh Dashboard
+- Manager IP: 192.168.12.137
+
+### Enrolled Endpoints
+
+Five endpoints are currently enrolled with the Wazuh Manager:
+
+1. Windows 11 Pro
+2. Windows Server 2025
+3. macOS
+4. Linux Mint
+5. Kali Linux
+
+The endpoints represent multiple operating systems and provide a heterogeneous environment for security monitoring and event analysis.
+
+### Project Phase
+
+The initial infrastructure and endpoint deployment phase is complete.
+
+The project is now moving into the security monitoring and investigation phase. Planned activities include:
+
+- Learning the Wazuh Dashboard
+- Generating controlled security events
+- Investigating alerts
+- Analyzing Wazuh rule IDs and severity levels
+- Examining MITRE ATT&CK mappings
+- Testing file integrity monitoring
+- Testing authentication monitoring
+- Developing custom detection rules
+- Building an Active Directory environment
+- Integrating Active Directory telemetry with Wazuh
+- Conducting controlled security exercises
+- Documenting investigations and findings

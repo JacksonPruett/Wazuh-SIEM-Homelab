@@ -74,6 +74,9 @@ The desktop PC serves as the analyst and administration workstation and will als
 | Wazuh Dashboard | Web-based monitoring interface | Operational |
 | MacBook Air M4 | Wazuh agent endpoint | Operational |
 | Desktop PC | Analyst workstation / virtualization host | Operational |
+| VM | Kali Linux | Operational |
+| VM | Linux Mint | Operational |
+| VM | Windows Server 2025 | Operational |
 
 ## Deployment Status
 
@@ -94,11 +97,11 @@ The desktop PC serves as the analyst and administration workstation and will als
 - Register and validate the first endpoint
 - Begin collecting endpoint telemetry
 - Deploy additional Windows and Linux virtual machines
+- Generate security events for validation
 
 ### Next Steps
 
 - Develop and test detection rules
-- Generate security events for validation
 - Document testing and results
 
 ## Documentation

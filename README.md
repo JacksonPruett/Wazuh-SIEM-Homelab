@@ -72,7 +72,7 @@ The desktop PC serves as the analyst and administration workstation and will als
 | Wazuh Manager | Event collection and security management | Operational |
 | Wazuh Indexer | Security event indexing and storage | Operational |
 | Wazuh Dashboard | Web-based monitoring interface | Operational |
-| MacBook Air M4 | Wazuh agent endpoint | Planned |
+| MacBook Air M4 | Wazuh agent endpoint | Operational |
 | Desktop PC | Analyst workstation / virtualization host | Operational |
 
 ## Deployment Status
@@ -90,13 +90,13 @@ The desktop PC serves as the analyst and administration workstation and will als
 - Dashboard migrations completed
 - Wazuh monitoring index created
 - Dashboard accessible over HTTPS
-
-### Next Steps
-
 - Deploy Wazuh Agent to MacBook
 - Register and validate the first endpoint
 - Begin collecting endpoint telemetry
 - Deploy additional Windows and Linux virtual machines
+
+### Next Steps
+
 - Develop and test detection rules
 - Generate security events for validation
 - Document testing and results
